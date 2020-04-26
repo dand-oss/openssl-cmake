@@ -58,9 +58,9 @@ endif()
 
 if( MSVC )
   if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
-    set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl-1_1-x64" )
+    set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl64MD" )
   elseif( CMAKE_SIZEOF_VOID_P EQUAL 4 )
-    set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl-1_1" )
+    set_target_properties( ssl PROPERTIES OUTPUT_NAME "ssl32MD" )
   endif()
 endif()
 
