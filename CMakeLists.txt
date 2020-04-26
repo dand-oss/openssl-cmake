@@ -28,12 +28,15 @@ set( CMAKE_LEGACY_CYGWIN_WIN32 0 )
 project( openssl )
 cmake_minimum_required( VERSION 3.1.0 )
 
+set( BUILD_SHARED_LIBS ON )
+SET(CMAKE_DEBUG_POSTFIX d) # findPackage expects this
+
 set( CMAKE_DISABLE_SOURCE_CHANGES ON )
 set( CMAKE_DISABLE_IN_SOURCE_BUILD ON )
 
 set( CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" )
 
-option( WITH_APPS "Build applications" ON )
+option( WITH_APPS "Build applications" OFF )
 
 # OpenSSL version detection imported from FindOpenSSL.cmake
 
@@ -123,6 +126,7 @@ endif()
 if( WIN32 )
   set( CMAKE_SHARED_LIBRARY_PREFIX "lib" )
   set( CMAKE_STATIC_LIBRARY_PREFIX "lib" )
+  set( CMAKE_IMPORT_LIBRARY_PREFIX "lib" )
 endif()
 
 if( WIN32 AND NOT CYGWIN )

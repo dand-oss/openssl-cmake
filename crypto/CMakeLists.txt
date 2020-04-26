@@ -302,9 +302,9 @@ endif()
 
 if( MSVC )
   if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
-    set_target_properties( crypto PROPERTIES OUTPUT_NAME "crypto-1_1-x64" )
+    set_target_properties( crypto PROPERTIES OUTPUT_NAME "crypto64MD" )
   elseif( CMAKE_SIZEOF_VOID_P EQUAL 4 )
-    set_target_properties( crypto PROPERTIES OUTPUT_NAME "crypto-1_1" )
+    set_target_properties( crypto PROPERTIES OUTPUT_NAME "crypto32MD" )
   endif()
 endif()
 
