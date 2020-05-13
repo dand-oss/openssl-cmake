@@ -27,6 +27,13 @@ cmake_minimum_required( VERSION 3.1.0...3.20 )
 set( CMAKE_LEGACY_CYGWIN_WIN32 0 )
 project( openssl )
 
+###############
+# ASI default settings
+list(APPEND CMAKE_MODULE_PATH "$ENV{ASV_CMAKE}")
+include(asv_cmake_defaults)
+asv_cmake_defaults( )
+###############
+
 set( BUILD_SHARED_LIBS ON )
 SET(CMAKE_DEBUG_POSTFIX d) # findPackage expects this
 
